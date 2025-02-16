@@ -6,7 +6,7 @@ module.exports = {
   },
   moduleNameMapper: {
     "\\.(css)$": "identity-obj-proxy",
-    "react-parcel/parcel": "react-parcel/lib/cjs/parcel.cjs",
+    "single-spa-react/parcel": "single-spa-react/lib/cjs/parcel.cjs",
   },
   setupFilesAfterEnv: ["@testing-library/jest-dom"],
 };

@@ -1,8 +1,8 @@
 {
-  "name": "@actionanand/react-parcel",
-  "homepage": "http://actionanand.github.io/react-parcel",
+  "name": "@actionanand/react-parcel-app",
+  "homepage": "http://actionanand.github.io/react-parcel-app",
   "scripts": {
-    "start": "webpack serve --port 20223",
+    "start": "webpack serve --port 20241",
     "start:standalone": "webpack serve --env standalone",
     "build": "concurrently yarn:build:*",
     "build:webpack": "webpack --mode=production",
@@ -52,6 +52,6 @@
     "single-spa-react": "^4.3.1"
   },
   "engines": {
-    "node": ">=16.0.0 <=20.13.1"
+    "node": ">=16.0.0 <20.0.0"
   }
 }
