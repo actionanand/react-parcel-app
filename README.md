@@ -9,9 +9,10 @@ This repo is used in conjunction with four other repos listed below. Together th
 
 - [**Root Config**](https://github.com/actionanand/single-spa-demo-root-config)
 - [**Angular App**](https://github.com/actionanand/single-spa-angular)
-- [**React App** (This Repo)](https://github.com/actionanand/react-parcel)
+- [**React App**](https://github.com/actionanand/single-spa-react)
 - [**Vue App**](https://github.com/actionanand/single-spa-vue)
 - [**Svelte App**](https://github.com/actionanand/single-spa-svelte)
+- [**React App Parcel** (This Repo)](https://github.com/actionanand/react-parcel-app)
 
 ## Demo
 
@@ -35,16 +36,16 @@ yarn build:webpack
 npx create-single-spa
 ```
 
+## How to clone
+
+```sh
+npx degit github:actionanand/react-parcel-app#1-skeleton sspa-react
+```
+
 ## How to serve raw github content as CDN
 
 ```
 https://cdn.jsdelivr.net/gh/<github-username>/<github-repo-name@branch-name>/<filename>
-```
-
-## Clone this Repo
-
-```
-npx degit github:actionanand/react-parcel#1-skeleton single-spa-react
 ```
 
 ## How It Works
