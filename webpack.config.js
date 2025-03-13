@@ -1,10 +1,10 @@
-const { merge } = require("webpack-merge");
-const singleSpaDefaults = require("webpack-config-single-spa-react");
+const { merge } = require('webpack-merge');
+const singleSpaDefaults = require('webpack-config-single-spa-react');
 
 module.exports = (webpackConfigEnv, argv) => {
   const defaultConfig = singleSpaDefaults({
-    orgName: "actionanand",
-    projectName: "react-parcel-app",
+    orgName: 'actionanand',
+    projectName: 'react-parcel-app',
     webpackConfigEnv,
     argv,
   });

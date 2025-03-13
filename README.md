@@ -2,6 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) with the help of [single-spa](https://single-spa.js.org/). React version used is `17.0.2`.
 
+> A **single-spa parcel** is essentially a reusable component within the Single-SPA framework that allows you to share UI elements across different frameworks within a single application, **similar to how a web component functions**, but with the added functionality of lifecycle management and **framework-agnostic mounting** provided by Single-SPA; essentially, a **parcel is a Single-SPA specific implementation of a web component**, designed to seamlessly integrate components built with different frameworks into a single page application
 
 ## Overview
 
