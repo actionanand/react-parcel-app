@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
+
 import styles from './FormComponent.module.css';
 
-export default function FormComponent({
-  todo = { title: 'Add some stuffs to todo', isDone: false },
-}) {
+export default function FormComponent({ todo = { title: 'Add some stuffs to todo', isDone: false } }) {
   const [name, setName] = useState('');
   const [isToggled, setIsToggled] = useState(false);
 
@@ -14,7 +13,7 @@ export default function FormComponent({
     }
   }, [todo]);
 
-  const handleNameChange = (event) => {
+  const handleNameChange = event => {
     setName(event.target.value);
   };
 
@@ -27,23 +26,13 @@ export default function FormComponent({
       <div>
         <label className={styles.label}>
           Latest todo:
-          <input
-            type="text"
-            value={name}
-            onChange={handleNameChange}
-            className={styles.input}
-          />
+          <input type='text' value={name} onChange={handleNameChange} className={styles.input} />
         </label>
       </div>
       <div className={styles.checkbox}>
-        <input
-          type="checkbox"
-          id="toggle"
-          checked={isToggled}
-          onChange={handleToggleChange}
-        />
+        <input type='checkbox' id='toggle' checked={isToggled} onChange={handleToggleChange} />
         {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-        <label htmlFor="toggle"></label>
+        <label htmlFor='toggle'></label>
       </div>
     </form>
   );
