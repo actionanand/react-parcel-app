@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import FormComponent from './FormComponent/FormComponent';
 import styles from './root.component.module.css';
@@ -9,6 +9,8 @@ export default function Root(props) {
   console.log('props from Angular:', props);
   console.log('passed from Angular:', dialogData);
 
+  const [isChanged, setIsChanged] = useState(false);
+
   const handleSave = formData => {
     if (formData.title.length > 30) {
       formData.title = formData.title.substring(0, 30) + '...';
@@ -17,10 +19,14 @@ export default function Root(props) {
     props[dialogRefAccessor].dialogRef.close({ event: 'update', message: 'Updated from react parcel', data: formData });
   };
 
+  const handleChange = changed => {
+    setIsChanged(changed);
+  };
+
   return (
     <section>
       <h3 className={styles.title}> {dialogData.title} </h3>
-      <FormComponent todo={dialogData.todo} onSave={handleSave} />
+      <FormComponent todo={dialogData.todo} onSave={handleSave} onChange={handleChange} />
 
       <div className={styles.buttonContainer}>
         <button
@@ -40,7 +46,8 @@ export default function Root(props) {
           className={`${styles.button} ${styles.update}`}
           onClick={() => {
             document.querySelector('form').dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
-          }}>
+          }}
+          disabled={!isChanged}>
           Update
         </button>
       </div>
