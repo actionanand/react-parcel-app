@@ -2,23 +2,27 @@ import React, { useState, useEffect } from 'react';
 
 import styles from './FormComponent.module.css';
 
-export default function FormComponent({ todo = { title: 'Add some stuffs to todo', isDone: false }, onSave }) {
-  const [name, setName] = useState('');
-  const [isToggled, setIsToggled] = useState(false);
+export default function FormComponent({
+  todo = { title: 'Add some stuffs to todo', isDone: false },
+  onSave,
+  onChange,
+}) {
+  const [name, setName] = useState(todo.title);
+  const [isToggled, setIsToggled] = useState(todo.isDone);
 
   useEffect(() => {
-    if (todo) {
-      setName(todo.title);
-      setIsToggled(todo.isDone);
-    }
+    setName(todo.title);
+    setIsToggled(todo.isDone);
   }, [todo]);
 
   const handleNameChange = event => {
     setName(event.target.value);
+    onChange(event.target.value !== todo.title || isToggled !== todo.isDone);
   };
 
   const handleToggleChange = () => {
     setIsToggled(!isToggled);
+    onChange(name !== todo.title || !isToggled !== todo.isDone);
   };
 
   const handleSubmit = event => {
